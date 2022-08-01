@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {SafeAreaView, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 
-export default function HeaderTabs() {
+export default function HeaderTabs(props) {
   const [activeTab, setActiveTab] = useState('Delivery');
   const HeaderButton = props => (
     <View>
