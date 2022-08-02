@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {SafeAreaView, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+  StyleSheet,
+} from 'react-native';
 
 export default function HeaderTabs(props) {
   const [activeTab, setActiveTab] = useState('Delivery');
@@ -14,6 +20,7 @@ export default function HeaderTabs(props) {
         }}
         onPress={() => {
           setActiveTab(props.text);
+          props.setActiveTab(props.text);
         }}>
         <Text
           style={{
@@ -28,8 +35,8 @@ export default function HeaderTabs(props) {
   );
   return (
     <View style={styles.main}>
-      <HeaderButton text="Delivery" />
-      <HeaderButton text="PickUp" />
+      <HeaderButton text="Delivery" setActiveTab={(props.setActiveTab)} />
+      <HeaderButton text="PickUp" setActiveTab={(props.setActiveTab)} />
     </View>
   );
 }

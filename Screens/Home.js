@@ -1,21 +1,44 @@
-import {View, Text, SafeAreaView, StyleSheet, geolocation} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  geolocation,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import HeaderTabs from './Home/HeaderTabs';
 import PlaceTouchBar from './Home/PlaceTouchBar';
 
 export default function Home() {
-  const [screenState, setScreenState] = useState('Delivery');
-  
+  // recognize button state on this screen.and make change screen view tapping button.
+  const [activeTab, setActiveTab] = useState('Delivery');
 
+  useEffect(() => {
+    console.log(activeTab);
+  }, [activeTab]);
 
-  return (
-    <View style={styles.screen}>
-      <View style={styles.buttonArea}>
-        <HeaderTabs />
+  // "Delivery" selected
+  if (activeTab === 'Delivery') {
+    return (
+      <View style={styles.screen}>
+        <View style={styles.buttonArea}>  
+          <HeaderTabs setActiveTab={setActiveTab}/>
+        </View>
+        {/* <PlaceTouchBar pressAddress={() => pressFunc()} /> */}
       </View>
-      <PlaceTouchBar pressAddress={() => pressFunc()}/>
-    </View>
-  );
+    );
+    // "PickUp" selected
+  } else {
+    return (
+      <View style={styles.screen}>
+        <View style={styles.buttonArea}>
+          <HeaderTabs setActiveTab={setActiveTab}/>
+        </View>
+        <PlaceTouchBar />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
