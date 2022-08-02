@@ -9,6 +9,7 @@ import {
 import React, {useEffect, useState} from 'react';
 import HeaderTabs from './Home/HeaderTabs';
 import PlaceTouchBar from './Home/PlaceTouchBar';
+import SearchPlaceNameBar from './Home/SearchPlaceNameBar';
 
 export default function Home() {
   // recognize button state on this screen.and make change screen view tapping button.
@@ -22,10 +23,11 @@ export default function Home() {
   if (activeTab === 'Delivery') {
     return (
       <View style={styles.screen}>
-        <View style={styles.buttonArea}>  
-          <HeaderTabs setActiveTab={setActiveTab}/>
+        <View style={styles.buttonArea}>
+          <HeaderTabs setActiveTab={setActiveTab} />
+          <PlaceTouchBar pressAddress={() => {}} placeAreaStyle={styles.placeArea} />
+          <SearchPlaceNameBar />
         </View>
-        {/* <PlaceTouchBar pressAddress={() => pressFunc()} /> */}
       </View>
     );
     // "PickUp" selected
@@ -33,9 +35,8 @@ export default function Home() {
     return (
       <View style={styles.screen}>
         <View style={styles.buttonArea}>
-          <HeaderTabs setActiveTab={setActiveTab}/>
+          <HeaderTabs setActiveTab={setActiveTab} />
         </View>
-        <PlaceTouchBar />
       </View>
     );
   }
@@ -50,4 +51,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingVertical: 8,
   },
+  placeArea: {
+    alignSelf: 'center',
+    padding: 16,
+  }
 });

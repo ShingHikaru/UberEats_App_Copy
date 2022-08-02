@@ -11,6 +11,7 @@ export default function PlaceTouchBar(props) {
   const [position, setPosition] = useState({latitude: 0, longitude: 0});
 
   useEffect(() => {
+    // TODO: to set function get current position's address name
     CheckIfLocationEnabled();
   }, []);
 
@@ -35,14 +36,15 @@ export default function PlaceTouchBar(props) {
       setPosition({latitude, longitude});
     });
   };
-  const currentAddress = 'Suwa-cho-201, Naka-yard';
+  // TODO: change to current address
+  const currentAddress = '*******yard, ********city';
   return (
-    <View style={styles.textArea}>
+    <View style={props.placeAreaStyle}>
       <TouchableWithoutFeedback
         onPress={() => {
           props.pressAddress();
         }}>
-        <Text style={styles.textStyle}>Now {currentAddress}</Text>
+        <Text style={styles.textStyle}>Now - {currentAddress}</Text>
       </TouchableWithoutFeedback>
     </View>
   );
