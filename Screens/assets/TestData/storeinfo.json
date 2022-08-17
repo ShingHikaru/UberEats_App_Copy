@@ -1,0 +1,16 @@
+[
+ {
+ "name" : "魚丼",
+ "star" : 5,
+ "priceBeginning" : 150,
+ "like" : false,
+ "imgUri" : "https://www.google.com/imgres?imgurl=https%3A%2F%2Fsweetsinfonews.com%2Fwp-content%2Fuploads%2F2021%2F07%2Fimg_60f0205b28ab2.png&imgrefurl=https%3A%2F%2Fsweetsinfonews.com%2Fuodon-yokosuka%2F&tbnid=rUBhYiNE2iI0RM&vet=12ahUKEwjr6ZaY7cz5AhXpTPUHHePRB7UQMygGegUIARDMAQ..i&docid=w08aRBwfCrXOoM&w=533&h=447&q=%E9%AD%9A%E4%B8%BC%20%E8%BF%BD%E6%B5%9C&ved=2ahUKEwjr6ZaY7cz5AhXpTPUHHePRB7UQMygGegUIARDMAQ"
+},
+{
+ "name" : "マクドナルド追浜駅前店　McDonald's Oppama",
+ "star" : 4.7,
+ "priceBeginning" : 150,
+ "like" : false,
+ "imgUri" : "https://www.google.com/imgres?imgurl=https%3A%2F%2Ftabelog.com%2Frestaurant%2Fimages%2FRvw%2F35095%2F640x640_rect_35095987.jpg&imgrefurl=https%3A%2F%2Ftabelog.com%2Fkanagawa%2FA1406%2FA140601%2F14039240%2Fdtlrvwlst%2F&tbnid=mhwp0mbbPbnprM&vet=12ahUKEwiQtZz97cz5AhVB_WEKHdTqBj0QMygDegUIARCLAQ..i&docid=Exi8XfWendbGDM&w=640&h=480&q=%E8%BF%BD%E6%B5%9C%E3%80%80%E3%83%9E%E3%83%83%E3%82%AF&ved=2ahUKEwiQtZz97cz5AhVB_WEKHdTqBj0QMygDegUIARCLAQ"
+}
+]
