@@ -12,13 +12,12 @@ struct MainEntryEntity {
     let markerLocation: Int
 }
     final class MainEntities {
-        var locationDataState: String
         
-        class state {
-            var fetchingState = false
-        }
-        var locationAPI: String = "https://73f4d5d8-1ee0-4e74-a7a3-71beeafd5d4d.mock.pstmn.io"
-        init(locationDataState: String) {
-            self.locationDataState = locationDataState
+        let entryEntity: MainEntryEntity
+        
+        
+        
+        init(entryEntity: MainEntryEntity) {
+            self.entryEntity = entryEntity
         }
     }

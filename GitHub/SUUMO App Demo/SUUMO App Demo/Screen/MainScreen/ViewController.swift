@@ -14,14 +14,14 @@ protocol ViewControllerInputs: AnyObject {
 }
 
 protocol ViewControllerOutputs: AnyObject {
-    func viewDidLoad(interactor: MainInteractor)
+    func viewDidLoad()
     func onMarkerPress()
     func onButtonPress()
 }
 
 
-class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
-    // ViewControllerOutputs is implemented in the Presenter class
+final class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
+    
     internal var presenter: ViewControllerOutputs?
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var navigationButton: UIButton!
@@ -35,25 +35,21 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         
     }
     var locationManager: CLLocationManager!
-// TODO: Button below the map (After writing some code "MainRouter")
-//  @IBAction func onPress(_ sender: Any) {
-//    MapRouterInput().push(from: self, entryEntity: MapEntryEntity(language: "Swift"))
-//  }
-}
-
-extension ViewController: ViewControllerInputs {
-    func setPinUsingMKPlacemark(location: CLLocationCoordinate2D) {
-       let pin = MKPlacemark(coordinate: location)
-       let coordinateRegion = MKCoordinateRegion(center: pin.coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
-       mapView.setRegion(coordinateRegion, animated: true)
-       mapView.addAnnotation(pin)
-    }
-    func setMarkerLocation(entities: MainEntities) {
-        entities.locationDataState =
-    }
     
-
+    @IBAction func onPress(_ sender: Any) {
+        presenter?.onButtonPress()
+  }
 }
+
+// TODO: do something
+//extension ViewController: ViewControllerInputs {
+//
+//    func setMarkerLocation(entities: MainEntities) {
+//        entities.locationDataState =
+//    }
+//
+//
+//}
 
 extension ViewController: Viewable {}
 
